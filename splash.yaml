@@ -1,0 +1,12 @@
+flutter_native_splash:
+  android: true
+  ios: true
+  web: false
+
+  background_image: "assest/images/splash_screen.png"
+  # image: "assest/images/splash_screen.png"
+  android_gravity: fill
+
+  android_12:
+    color: "#1F41BB"
+    image: assest/images/splash_screen_android_12.png
