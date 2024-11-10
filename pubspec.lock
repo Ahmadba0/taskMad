@@ -163,6 +163,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  flutter_screenutil:
+    dependency: "direct main"
+    description:
+      name: flutter_screenutil
+      sha256: "8239210dd68bee6b0577aa4a090890342d04a136ce1c81f98ee513fc0ce891de"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.9.3"
+  flutter_snake_navigationbar:
+    dependency: "direct main"
+    description:
+      name: flutter_snake_navigationbar
+      sha256: b78bd6389f95d595922704a3e9d1c5d94283eca8e7c02032c157b2d8e96ba083
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.6.1"
   flutter_staggered_animations:
     dependency: "direct main"
     description:
@@ -366,7 +382,7 @@ packages:
     source: hosted
     version: "6.1.2"
   shared_preferences:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: shared_preferences
       sha256: "746e5369a43170c25816cc472ee016d3a66bc13fcf430c0bc41ad7b4b2922051"
@@ -426,6 +442,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  smooth_page_indicator:
+    dependency: "direct main"
+    description:
+      name: smooth_page_indicator
+      sha256: "3b28b0c545fa67ed9e5997d9f9720d486f54c0c607e056a1094544e36934dff3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.0+3"
   source_span:
     dependency: transitive
     description:

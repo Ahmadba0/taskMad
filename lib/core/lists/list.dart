@@ -3,3 +3,9 @@ List cityList = [
   'Homs',
   'Aleppo',
 ];
+List colorList = [
+  'Black',
+  'White',
+  'Orange',
+  'Blue',
+];

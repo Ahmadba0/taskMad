@@ -4,6 +4,7 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 import 'package:otp_text_field/otp_field.dart';
+import 'package:tasktwo/core/services/services.dart';
 
 class VerifyAfterSignupController extends GetxController {
   //var
@@ -12,6 +13,7 @@ class VerifyAfterSignupController extends GetxController {
   late Timer _timer;
   int second = 59;
   int minutes = 3;
+  MyServices myServices = Get.find();
   //my method
   myTimerSecond() {
     _timer = Timer.periodic(

@@ -3,8 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tasktwo/core/application_style/app_color.dart';
+import 'package:tasktwo/core/localization/changeLocal.dart';
+import 'package:tasktwo/main.dart';
 
-class CustomWiElevatedBtnAuth extends StatelessWidget {
+class CustomWiElevatedBtnAuth extends GetView<LocaleController> {
   final String text;
   final void Function() onPressed;
   const CustomWiElevatedBtnAuth(
@@ -20,15 +22,20 @@ class CustomWiElevatedBtnAuth extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
-            backgroundColor: AppColors.blue1,
+            backgroundColor:
+                theme == 'light' ? AppColors.blue1 : AppColors.blue5_207,
             // padding: EdgeInsets.symmetric(horizontal: 100)
           ),
           onPressed: onPressed,
           child: Text(
             text,
             style: TextStyle(
-              fontFamily: 'PoppinsMedium',
-              color: AppColors.white1,
+              fontFamily:
+                  controller.myServices.sharedPreferences.getString('lang') ==
+                          'en'
+                      ? 'PoppinsMedium'
+                      : 'SwisraMedium',
+              color: theme == 'light' ? AppColors.white1 : AppColors.black,
               fontSize: 20,
               // fontWeight: FontWeight.w600,
             ),

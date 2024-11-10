@@ -23,11 +23,10 @@ class Signup extends StatelessWidget {
     Get.put(SignupController());
     return GetBuilder<SignupController>(
       builder: (controller) => Scaffold(
-        backgroundColor: AppColors.white1,
         body: PopScope(
           onPopInvoked: (didPop) {},
           child: Container(
-            color: AppColors.white1,
+            color: theme == 'light' ? AppColors.white1 : AppColors.black,
             child: Stack(
               children: [
                 ///i cut the image to two part
@@ -44,7 +43,6 @@ class Signup extends StatelessWidget {
                     ? Container()
                     : WiBottomImageSignup(),
                 Container(
-                  // color: AppColors.white1,
                   padding:
                       EdgeInsets.only(top: 0, bottom: 8, right: 30, left: 30),
                   height: MediaQuery.of(context).size.height,
@@ -61,12 +59,22 @@ class Signup extends StatelessWidget {
                           widget: Expanded(
                             flex: 1,
                             child: InkWell(
-                              child: Image.asset(
-                                AppImages.imageprofile,
-                                fit: BoxFit.contain,
-                                width: 80,
-                                height: 80,
-                              ),
+                              child: theme == 'light'
+                                  ? Image.asset(
+                                      AppImages.imageprofile,
+                                      fit: BoxFit.contain,
+                                      width: 80,
+                                      height: 80,
+                                    )
+                                  : Container(
+                                      color: AppColors.black,
+                                      child: Image.asset(
+                                        AppImages.personBlack,
+                                        fit: BoxFit.contain,
+                                        width: 80,
+                                        height: 80,
+                                      ),
+                                    ),
                             ),
                           )),
                       SizedBox(height: Get.height / 30),
@@ -75,7 +83,7 @@ class Signup extends StatelessWidget {
                       ///--2
                       ///
                       CustomWiFirstTextAuth(
-                        text: 'Create New\nAccount',
+                        text: '15'.tr,
                       ),
                       SizedBox(height: Get.height / 50),
 
@@ -83,7 +91,7 @@ class Signup extends StatelessWidget {
                       ///--3
                       ///
                       CustomWiSecondTextAuth(
-                        text: 'You look new here, let’s make an account!',
+                        text: '16'.tr,
                       ),
                       SizedBox(height: Get.height / 23),
 
@@ -96,7 +104,7 @@ class Signup extends StatelessWidget {
                       ///--5
                       ///
                       CustomWiElevatedBtnAuth(
-                        text: 'Sign up',
+                        text: '21'.tr,
                         onPressed: () {
                           Get.toNamed(AppRoutes.verifyAfterSignup, arguments: {
                             'email': controller.emailController!.text,
@@ -109,8 +117,8 @@ class Signup extends StatelessWidget {
                       ///--6
                       ///
                       CustomWiGoToAnotherPageLoginOrSignupAuth(
-                        textOne: "Already have an account ? ",
-                        texttwo: "Login",
+                        textOne: "22".tr,
+                        texttwo: "23".tr,
                         onTap: () => Get.offNamed(AppRoutes.login),
                       ),
                     ],

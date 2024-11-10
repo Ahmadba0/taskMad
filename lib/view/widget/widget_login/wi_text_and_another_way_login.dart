@@ -2,10 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tasktwo/controller/login_controller.dart';
 import 'package:tasktwo/core/application_style/app_color.dart';
 import 'package:tasktwo/core/application_style/app_images.dart';
+import 'package:tasktwo/main.dart';
 
-class CustomWiTextAndAnotherWayLogin extends StatelessWidget {
+class CustomWiTextAndAnotherWayLogin extends GetView<LoginController> {
   const CustomWiTextAndAnotherWayLogin({super.key});
 
   @override
@@ -15,10 +17,14 @@ class CustomWiTextAndAnotherWayLogin extends StatelessWidget {
         Container(
           alignment: Alignment.center,
           child: Text(
-            'or continue with',
+            '12'.tr,
             style: TextStyle(
-              // fontFamily: 'Poppins',
-              color: AppColors.grey1,
+              fontFamily:
+                  controller.myServices.sharedPreferences.getString('lang') ==
+                          'en'
+                      ? 'PoppinsMedium'
+                      : 'SwisraThin',
+              color: theme == 'light' ? AppColors.grey1 : AppColors.blue5_207,
               fontSize: 14,
               fontWeight: FontWeight.w600,
             ),
@@ -30,26 +36,47 @@ class CustomWiTextAndAnotherWayLogin extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(
-                AppImages.imgG,
-                width: 45,
-                height: 60,
-                fit: BoxFit.contain,
-              ),
+              theme == 'light'
+                  ? Image.asset(
+                      AppImages.imgG,
+                      width: 45,
+                      height: 60,
+                      fit: BoxFit.contain,
+                    )
+                  : Image.asset(
+                      AppImages.googleBlack,
+                      width: 45,
+                      height: 60,
+                      fit: BoxFit.contain,
+                    ),
               SizedBox(width: 10),
-              Image.asset(
-                AppImages.imgF,
-                width: 45,
-                height: 50,
-                fit: BoxFit.fill,
-              ),
+              theme == 'light'
+                  ? Image.asset(
+                      AppImages.imgF,
+                      width: 45,
+                      height: 50,
+                      fit: BoxFit.fill,
+                    )
+                  : Image.asset(
+                      AppImages.faceBlack,
+                      width: 50,
+                      height: 60,
+                      fit: BoxFit.contain,
+                    ),
               SizedBox(width: 10),
-              Image.asset(
-                AppImages.imgApple,
-                width: 43,
-                height: 48,
-                fit: BoxFit.fill,
-              ),
+              theme == 'light'
+                  ? Image.asset(
+                      AppImages.imgApple,
+                      width: 43,
+                      height: 48,
+                      fit: BoxFit.fill,
+                    )
+                  : Image.asset(
+                      AppImages.appleBlack,
+                      width: 50,
+                      height: 60,
+                      fit: BoxFit.contain,
+                    ),
             ],
           ),
         ),

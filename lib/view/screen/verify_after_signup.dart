@@ -20,7 +20,7 @@ class VerifyAfterSignup extends StatelessWidget {
         Get.put(VerifyAfterSignupController());
     return Scaffold(
       body: Container(
-        color: AppColors.white1,
+        color: theme == 'light' ? AppColors.white1 : AppColors.black,
         child: Stack(
           children: [
             ///i cut the image to two part
@@ -66,7 +66,7 @@ class VerifyAfterSignup extends StatelessWidget {
                   ///--3
                   ///
                   CustomWiElevatedBtnAuth(
-                    text: 'Verify code',
+                    text: '27'.tr,
                     onPressed: () {
                       Get.offAllNamed(AppRoutes.login);
                     },

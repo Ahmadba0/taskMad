@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tasktwo/core/application_style/app_color.dart';
+import 'package:tasktwo/core/services/services.dart';
 
 class WelcomScreenController extends GetxController {
   ///
   ///---var
   ///
-  bool isLanguageArabic = false;
-  bool isLanguageEnglish = true;
+  bool? isLanguageArabic;
+  bool? isLanguageEnglish;
   double widthOfScreen = 0;
   bool isSmall = false;
+  MyServices myServices = Get.find();
+  Color? primaryColor;
+  Color? secondColor;
 
   ///
   ///---my method
@@ -41,6 +46,20 @@ class WelcomScreenController extends GetxController {
     } else {
       isSmall = false;
     }
+    update();
+  }
+
+  //
+  @override
+  void onInit() {
+    print('*-+*-+*-+*-+*-+');
+    print(myServices.sharedPreferences.getString('lang'));
+    // TODO: implement onInit
+    super.onInit();
+    isLanguageArabic =
+        myServices.sharedPreferences.getString('lang') == 'ar' ? true : false;
+    isLanguageEnglish =
+        myServices.sharedPreferences.getString('lang') == 'en' ? true : false;
     update();
   }
 }

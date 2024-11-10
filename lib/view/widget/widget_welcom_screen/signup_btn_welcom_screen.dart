@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tasktwo/core/application_style/app_color.dart';
 import 'package:tasktwo/main.dart';
@@ -19,16 +20,17 @@ class SignupBtnWelcomScreen extends StatelessWidget {
         child: Container(
           height: Get.height,
           decoration: BoxDecoration(
-            color: AppColors.blue1,
+            // color: theme == 'light' ? AppColors.blue1 : AppColors.blue4_164,
+            color: Theme.of(context).primaryColorLight,
             borderRadius: BorderRadius.circular(12),
           ),
           alignment: Alignment.center,
           child: Text(
-            "Sign up",
+            "4".tr,
             style: TextStyle(
               fontFamily: 'Urbane',
-              color: AppColors.white1,
-              fontSize: 16,
+              color: theme == 'light' ? AppColors.white1 : AppColors.black,
+              fontSize: 16.sp,
             ),
           ),
         ),

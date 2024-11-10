@@ -41,7 +41,10 @@ dependencies:
   flutter_staggered_animations:
   otp_text_field: 
   flutter_otp_text_field:
-  
+  flutter_screenutil:  
+  flutter_snake_navigationbar: 
+  smooth_page_indicator: 
+  shared_preferences: 
 
 
  
@@ -87,32 +90,89 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
+  #1
     - family: Urbane
       fonts:
         - asset: assest/font/Urbane/Urbane-Medium.ttf
+  #2
     - family: UrbaneBold
       fonts:
         - asset: assest/font/Urbane/Urbane-Bold.ttf
           # weight: 400
+  #3
     - family: UrbaneHeavy
       fonts:
         - asset: assest/font/Urbane/Urbane-Heavy.ttf
           # weight: 400
+  #4
     - family: Poppins
       fonts:
         - asset: assest/font/Poppins/Poppins-Black.ttf
+  #5
     - family: PoppinsBold
       fonts:
         - asset: assest/font/Poppins/Poppins-Bold.ttf
           # weight: 400Poppins-Regular
+  #6
     - family: PoppinsRegular
       fonts:
         - asset: assest/font/Poppins/Poppins-Regular.ttf
           # weight: 400Poppins-Regular
+  #7
     - family: PoppinsMedium
       fonts:
         - asset: assest/font/Poppins/Poppins-Medium.ttf
           # weight: 400Poppins-Regular
+  #8
+    - family: ArticulatBold
+      fonts:
+        - asset: assest/font/Articulat/bold.otf
+          # weight: 400Poppins-Regular
+  #9
+    - family: ArticulatMidium
+      fonts:
+        - asset: assest/font/Articulat/medium.otf
+          # weight: 400Poppins-Regular
+  #10
+    - family: FigtreeBold
+      fonts:
+        - asset: assest/font/Figtree/static/Figtree-Bold.ttf
+          # weight: 400Poppins-Regular
+  #11
+    - family: FigtreeMedium
+      fonts:
+        - asset: assest/font/Figtree/static/Figtree-Medium.ttf
+          # weight: 400Poppins-Regular
+  #12
+    - family: RowdiesRegular
+      fonts:
+        - asset: assest/font/Rowdies/Rowdies-Regular.ttf
+          # weight: 400Poppins-Regular
+  #13
+    - family: RowdiesBold
+      fonts:
+        - asset: assest/font/Rowdies/Rowdies-Bold.ttf
+          # weight: 400Poppins-Regular
+  #14
+    - family: SwisraBold
+      fonts:
+        - asset: assest/font/Swisra/Swissra-Bold.ttf
+          # weight: 400Poppins-Regular
+  #15
+    - family: SwisraMedium
+      fonts:
+        - asset: assest/font/Swisra/Swissra-Medium.ttf
+          # weight: 400Poppins-Regular
+  #16
+    - family: SwisraNormal
+      fonts:
+        - asset: assest/font/Swisra/Swissra-Normal.ttf
+          # weight: 400Poppins-Regular
+  #17
+    - family: SwisraThin
+      fonts:
+        - asset: assest/font/Swisra/Swissra-Thin.ttf
+          # weight: 400Poppins-Regular
   #
   # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
+  # see https://flutter.dev/custom-fonts/#from-packagesSwissra-Medium

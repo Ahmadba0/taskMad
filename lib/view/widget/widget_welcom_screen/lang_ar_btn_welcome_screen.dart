@@ -1,7 +1,10 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tasktwo/controller/welcom_screen_controller.dart';
 import 'package:tasktwo/core/application_style/app_color.dart';
+import 'package:tasktwo/main.dart';
 
 class LangArBtnWelcomeScreen extends GetView<WelcomScreenController> {
   final String text;
@@ -23,12 +26,30 @@ class LangArBtnWelcomeScreen extends GetView<WelcomScreenController> {
         onTap: onTap,
         child: Container(
           decoration: BoxDecoration(
-            color: controller.isLanguageArabic
+            color: controller.isLanguageArabic!
                 ? AppColors.blue1
                 : AppColors.white1,
             borderRadius: BorderRadius.only(
-              topRight: Radius.circular(8),
-              bottomRight: Radius.circular(8),
+              topRight:
+                  controller.myServices.sharedPreferences.getString('lang') ==
+                          'ar'
+                      ? Radius.circular(0)
+                      : Radius.circular(8),
+              bottomRight:
+                  controller.myServices.sharedPreferences.getString('lang') ==
+                          'ar'
+                      ? Radius.circular(0)
+                      : Radius.circular(8),
+              topLeft:
+                  controller.myServices.sharedPreferences.getString('lang') ==
+                          'ar'
+                      ? Radius.circular(8)
+                      : Radius.circular(0),
+              bottomLeft:
+                  controller.myServices.sharedPreferences.getString('lang') ==
+                          'ar'
+                      ? Radius.circular(8)
+                      : Radius.circular(0),
             ),
           ),
           height: Get.height,
@@ -37,7 +58,7 @@ class LangArBtnWelcomeScreen extends GetView<WelcomScreenController> {
             text,
             style: TextStyle(
               fontFamily: 'UrbaneBold',
-              color: controller.isLanguageArabic
+              color: controller.isLanguageArabic!
                   ? AppColors.white1
                   : AppColors.blue1,
               fontSize: 16,

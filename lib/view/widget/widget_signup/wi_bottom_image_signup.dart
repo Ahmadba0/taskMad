@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:tasktwo/core/application_style/app_images.dart';
+import 'package:tasktwo/main.dart';
 
 class WiBottomImageSignup extends StatelessWidget {
   const WiBottomImageSignup({super.key});
@@ -12,9 +13,13 @@ class WiBottomImageSignup extends StatelessWidget {
       child: Positioned(
         bottom: 0,
         right: 0,
-        child: Image.asset(
-          AppImages.bottomRight,
-        ),
+        child: theme == 'light'
+            ? Image.asset(
+                AppImages.bottomRight,
+              )
+            : Image.asset(
+                AppImages.blackBottomRight,
+              ),
       ),
     );
   }

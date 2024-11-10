@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tasktwo/controller/welcom_screen_controller.dart';
 import 'package:tasktwo/core/application_style/app_images.dart';
+import 'package:tasktwo/core/localization/changeLocal.dart';
+import 'package:tasktwo/core/services/services.dart';
+import 'package:tasktwo/main.dart';
 import 'package:tasktwo/view/widget/widget_welcom_screen/two_lang_btn_welcome_screen.dart';
 import 'package:tasktwo/view/widget/widget_welcom_screen/whit_controller_welcome_screen.dart';
 

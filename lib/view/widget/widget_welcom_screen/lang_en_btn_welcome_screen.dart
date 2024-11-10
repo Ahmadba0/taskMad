@@ -24,12 +24,18 @@ class LangEnBtnWelcomeScreen extends GetView<WelcomScreenController> {
         child: Container(
           height: Get.height,
           decoration: BoxDecoration(
-            color: controller.isLanguageEnglish
+            color: controller.isLanguageEnglish!
                 ? AppColors.blue1
                 : AppColors.white1,
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(8),
-              bottomLeft: Radius.circular(8),
+            borderRadius: BorderRadius.only(
+              topLeft: const Radius.circular(8),
+              bottomLeft: const Radius.circular(8),
+              topRight: controller.isLanguageArabic == true
+                  ? const Radius.circular(8)
+                  : const Radius.circular(0),
+              bottomRight: controller.isLanguageArabic == true
+                  ? const Radius.circular(8)
+                  : const Radius.circular(0),
             ),
           ),
           alignment: Alignment.center,
@@ -37,7 +43,7 @@ class LangEnBtnWelcomeScreen extends GetView<WelcomScreenController> {
             text,
             style: TextStyle(
               fontFamily: 'UrbaneBold',
-              color: controller.isLanguageEnglish
+              color: controller.isLanguageEnglish!
                   ? AppColors.white1
                   : AppColors.blue1,
               fontSize: 16,

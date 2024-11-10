@@ -1,6 +1,9 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:tasktwo/core/application_style/app_color.dart';
+import 'package:tasktwo/main.dart';
 
 class CustomWiBackAndIconAuth extends StatelessWidget {
   final void Function()? onTapBack;
@@ -22,7 +25,10 @@ class CustomWiBackAndIconAuth extends StatelessWidget {
             flex: 1,
             child: GestureDetector(
               onTap: onTapBack,
-              child: Icon(Icons.arrow_back_ios),
+              child: Icon(
+                Icons.arrow_back_ios,
+                color: theme == 'light' ? AppColors.black : AppColors.white1,
+              ),
             ),
           ),
           // SizedBox(width: Get.width / 1.8),

@@ -3,6 +3,7 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 import 'package:tasktwo/controller/welcom_screen_controller.dart';
 import 'package:tasktwo/core/application_style/app_color.dart';
+import 'package:tasktwo/core/localization/changeLocal.dart';
 import 'package:tasktwo/view/widget/widget_welcom_screen/lang_ar_btn_welcome_screen.dart';
 import 'package:tasktwo/view/widget/widget_welcom_screen/lang_en_btn_welcome_screen.dart';
 
@@ -12,9 +13,12 @@ class TwoLangBtnWelcomeScreen extends GetView<WelcomScreenController> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<WelcomScreenController>(
-      builder: (controller) => Positioned(
+      builder: (controller) => Positioned.directional(
         top: 38,
-        right: 25,
+        start: 25,
+        textDirection: controller.isLanguageArabic == true
+            ? TextDirection.ltr
+            : TextDirection.rtl,
         child: AnimationConfiguration.staggeredList(
           position: 1,
           child: SlideAnimation(
@@ -44,6 +48,8 @@ class TwoLangBtnWelcomeScreen extends GetView<WelcomScreenController> {
                       text: 'EN',
                       onTap: () {
                         controller.onTapToChangeLanguage('EN');
+                        LocaleController localeController = Get.find();
+                        localeController.changeLanguage('en');
                       },
                     ),
 
@@ -54,6 +60,8 @@ class TwoLangBtnWelcomeScreen extends GetView<WelcomScreenController> {
                       text: 'AR',
                       onTap: () {
                         controller.onTapToChangeLanguage('AR');
+                        LocaleController localeController = Get.find();
+                        localeController.changeLanguage('ar');
                       },
                     ),
                   ],

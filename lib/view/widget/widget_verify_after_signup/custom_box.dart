@@ -6,7 +6,8 @@ import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/otp_field_style.dart';
 import 'package:otp_text_field/style.dart';
 import 'package:tasktwo/controller/verify_after_signup_controller.dart';
-import 'package:tasktwo/core/application_style/app_color.dARt';
+import 'package:tasktwo/core/application_style/app_color.dart';
+import 'package:tasktwo/main.dart';
 
 class CustomBox extends GetView<VerifyAfterSignupController> {
   final void Function()? onTap;
@@ -20,7 +21,9 @@ class CustomBox extends GetView<VerifyAfterSignupController> {
       width: 366,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: AppColors.white2,
+        color: theme == 'light'
+            ? AppColors.white2
+            : Color.fromARGB(255, 30, 30, 30),
       ),
       child: Column(
         children: [
@@ -31,10 +34,15 @@ class CustomBox extends GetView<VerifyAfterSignupController> {
           ///
 
           Text(
-            'Email\nverification',
+            '24'.tr,
             style: TextStyle(
-              fontFamily: 'Urbane',
-              color: AppColors.blue1,
+              // fontFamily: 'Urban/e',
+              fontFamily:
+                  controller.myServices.sharedPreferences.getString('lang') ==
+                          'en'
+                      ? 'Urbane'
+                      : 'SwisraBold',
+              color: theme == 'light' ? AppColors.blue1 : AppColors.blue5_207,
               fontSize: 30,
               fontWeight: FontWeight.w900,
             ),
@@ -47,10 +55,15 @@ class CustomBox extends GetView<VerifyAfterSignupController> {
           ///--2
           ///
           Text(
-            'Enter the 6-digit code\nsent to your email : $textEmail',
+            // '25 : $textEmail'.tr,
+            '${'25'.tr}$textEmail',
             style: TextStyle(
-              fontFamily: 'Urbane',
-              color: AppColors.black,
+              fontFamily:
+                  controller.myServices.sharedPreferences.getString('lang') ==
+                          'en'
+                      ? 'Urbane'
+                      : 'SwisraNormal',
+              color: theme == 'light' ? AppColors.black : AppColors.white1,
               fontSize: 14,
               fontWeight: FontWeight.w700,
             ),
@@ -65,10 +78,19 @@ class CustomBox extends GetView<VerifyAfterSignupController> {
             child: OTPTextField(
               length: 6,
               fieldStyle: FieldStyle.underline,
+
               otpFieldStyle: OtpFieldStyle(
-                borderColor: Colors.black,
+                // borderColor: theme == 'light'
+                //     ? Colors.black
+                //     : AppColors.white1,
+
+                enabledBorderColor:
+                    theme == 'light' ? AppColors.black : AppColors.white1,
+                backgroundColor:
+                    theme == 'light' ? AppColors.white2 : AppColors.black1,
               ),
               // controller: otpController,
+
               width: MediaQuery.of(context).size.width,
               fieldWidth: 20,
               textFieldAlignment: MainAxisAlignment.spaceEvenly,
@@ -90,7 +112,7 @@ class CustomBox extends GetView<VerifyAfterSignupController> {
               '${controller.minutes} : ${controller.second}',
               style: TextStyle(
                 fontFamily: 'Urbane',
-                color: AppColors.black,
+                color: theme == 'light' ? AppColors.black : AppColors.white1,
                 fontSize: 14,
                 fontWeight: FontWeight.w700,
               ),
@@ -105,10 +127,14 @@ class CustomBox extends GetView<VerifyAfterSignupController> {
           InkWell(
             onTap: onTap,
             child: Text(
-              'Resend code',
+              '26'.tr,
               style: TextStyle(
-                  fontFamily: 'Urbane',
-                  color: AppColors.black,
+                  fontFamily: controller.myServices.sharedPreferences
+                              .getString('lang') ==
+                          'en'
+                      ? 'Urbane'
+                      : 'SwisraNormal',
+                  color: theme == 'light' ? AppColors.black : AppColors.white1,
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
                   decoration: TextDecoration.underline),

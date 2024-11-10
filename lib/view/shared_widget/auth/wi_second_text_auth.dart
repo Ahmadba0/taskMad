@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:tasktwo/core/application_style/app_color.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomWiSecondTextAuth extends StatelessWidget {
   final String text;
@@ -11,12 +11,13 @@ class CustomWiSecondTextAuth extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
-        fontFamily: 'Urbane',
-        color: AppColors.black,
-        fontSize: 14,
-        fontWeight: FontWeight.w700,
-      ),
+      // style: TextStyle(
+      //   fontFamily: 'Urbane',
+      //   color: theme == 'light' ? AppColors.black : AppColors.white1,
+      //   fontSize: 14,
+      //   fontWeight: FontWeight.w700,
+      // ),
+      style: Theme.of(context).textTheme.bodySmall!.copyWith(fontSize: 14.sp),
       textAlign: TextAlign.center,
     );
   }

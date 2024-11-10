@@ -18,8 +18,8 @@ class CustomWiAllTextFormFieldSignup extends GetView<SignupController> {
         ///--4
         ///
         CustomWiTextFormFieldAuth(
-          hint: 'Email',
-          controller: controller.emailController!,
+          hint: '8'.tr,
+          controllerr: controller.emailController!,
           // focusNode: fn,
         ),
 
@@ -34,8 +34,8 @@ class CustomWiAllTextFormFieldSignup extends GetView<SignupController> {
                   ///--5
                   ///
                   CustomWiTextFormFieldAuth(
-                hint: 'User name',
-                controller: controller.userNameController!,
+                hint: '17'.tr,
+                controllerr: controller.userNameController!,
                 // focusNode: fn,
               ),
             ),
@@ -48,8 +48,8 @@ class CustomWiAllTextFormFieldSignup extends GetView<SignupController> {
                   ///--6
                   ///
                   CustomWiTextFormFieldAuth(
-                hint: 'Phone number',
-                controller: controller.phoneNumberController!,
+                hint: '18'.tr,
+                controllerr: controller.phoneNumberController!,
                 // focusNode: fn,
               ),
             ),
@@ -70,8 +70,8 @@ class CustomWiAllTextFormFieldSignup extends GetView<SignupController> {
         ///--8
         ///
         CustomWiTextFormFieldAuth(
-          hint: 'Password',
-          controller: controller.passwordController!,
+          hint: '9'.tr,
+          controllerr: controller.passwordController!,
           isObsecureText: controller.isobsecure1,
           suffixIcon: IconButton(
               onPressed: () => controller.changeobsecure1(),
@@ -88,8 +88,8 @@ class CustomWiAllTextFormFieldSignup extends GetView<SignupController> {
         ///--9
         ///
         CustomWiTextFormFieldAuth(
-          hint: 'Confirm Password',
-          controller: controller.confirmPasswordController!,
+          hint: '20'.tr,
+          controllerr: controller.confirmPasswordController!,
           isObsecureText: controller.isobsecure2,
           suffixIcon: IconButton(
               onPressed: () => controller.changeobsecure2(),

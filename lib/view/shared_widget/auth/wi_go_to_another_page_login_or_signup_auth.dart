@@ -1,7 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:tasktwo/core/application_style/app_color.dart';
+import 'package:tasktwo/main.dart';
 
 class CustomWiGoToAnotherPageLoginOrSignupAuth extends StatelessWidget {
   final String textOne;
@@ -21,8 +24,8 @@ class CustomWiGoToAnotherPageLoginOrSignupAuth extends StatelessWidget {
             textOne,
             style: TextStyle(
               // fontFamily: 'Poppins',
-              color: AppColors.black,
-              fontSize: 16,
+              color: theme == 'light' ? AppColors.black : AppColors.blue5_207,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -32,8 +35,8 @@ class CustomWiGoToAnotherPageLoginOrSignupAuth extends StatelessWidget {
               texttwo,
               style: TextStyle(
                   // fontFamily: 'Poppins',
-                  color: AppColors.blue1,
-                  fontSize: 16,
+                  color: theme == 'light' ? AppColors.blue1 : AppColors.blue1,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                   decoration: TextDecoration.underline),
             ),

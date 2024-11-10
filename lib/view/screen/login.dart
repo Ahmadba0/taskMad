@@ -1,12 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tasktwo/controller/login_controller.dart';
 import 'package:tasktwo/core/application_style/app_color.dARt';
 import 'package:tasktwo/core/application_style/app_images.dart';
 import 'package:tasktwo/main.dart';
-import 'package:tasktwo/view/screen/test.dart';
 import 'package:tasktwo/view/shared_widget/auth/wi_elevated_btn_auth.dart';
 import 'package:tasktwo/view/shared_widget/auth/wi_go_to_another_page_login_or_signup_auth.dart';
 import 'package:tasktwo/view/shared_widget/auth/wi_back_and_icon_auth.dart';
@@ -22,6 +22,7 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(LoginController());
+
     return GetBuilder<LoginController>(
       builder: (controller) => Scaffold(
         resizeToAvoidBottomInset:
@@ -32,9 +33,13 @@ class Login extends StatelessWidget {
               // height: Get.height,
               height: MediaQuery.of(context).size.height,
               padding: EdgeInsets.only(top: 0, bottom: 0, right: 30, left: 30),
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage(AppImages.backgroundAuth),
+                    image: AssetImage(
+                      theme == 'light'
+                          ? AppImages.backgroundAuth
+                          : AppImages.blackLoginBackGround,
+                    ),
                     fit: BoxFit.fill),
               ),
               child: ListView(
@@ -44,6 +49,7 @@ class Login extends StatelessWidget {
                   ///
                   ///--1
                   ///
+                  SizedBox(height: 2.h),
                   CustomWiBackAndIconAuth(
                     onTapBack: () {
                       Get.back();
@@ -52,22 +58,29 @@ class Login extends StatelessWidget {
                       flex: 1,
                       child: GestureDetector(
                         onTap: () {},
-                        child: Image.asset(
-                          AppImages.logomini,
-                          fit: BoxFit.contain,
-                          width: 80,
-                          height: 80,
-                        ),
+                        child: theme == 'light'
+                            ? Image.asset(
+                                AppImages.logomini,
+                                fit: BoxFit.contain,
+                                width: 80,
+                                height: 80,
+                              )
+                            : Image.asset(
+                                AppImages.logoBlack,
+                                fit: BoxFit.contain,
+                                width: 200,
+                                height: 80,
+                              ),
                       ),
                     ),
                   ),
-                  SizedBox(height: Get.height / 30),
+                  SizedBox(height: Get.height / 30.h),
 
                   ///
                   ///--2
                   ///
                   CustomWiFirstTextAuth(
-                    text: 'Login to your\naccount.',
+                    text: '6'.tr,
                   ),
                   SizedBox(height: Get.height / 50),
 
@@ -75,7 +88,7 @@ class Login extends StatelessWidget {
                   ///--3
                   ///
                   CustomWiSecondTextAuth(
-                    text: 'Hello, you have been missed!',
+                    text: '7'.tr,
                   ),
                   SizedBox(height: Get.height / 15),
 
@@ -83,8 +96,8 @@ class Login extends StatelessWidget {
                   ///--4
                   ///
                   CustomWiTextFormFieldAuth(
-                    hint: 'Email',
-                    controller: controller.emailController!,
+                    hint: '8'.tr,
+                    controllerr: controller.emailController!,
                   ),
                   SizedBox(height: Get.height / 35),
 
@@ -92,8 +105,8 @@ class Login extends StatelessWidget {
                   ///--5
                   ///
                   CustomWiTextFormFieldAuth(
-                    hint: 'Password',
-                    controller: controller.passwordController!,
+                    hint: '9'.tr,
+                    controllerr: controller.passwordController!,
                     isObsecureText: controller.isobsecure,
                     suffixIcon: IconButton(
                         onPressed: () => controller.changeobsecure(),
@@ -116,9 +129,10 @@ class Login extends StatelessWidget {
                   ///--7
                   ///
                   CustomWiElevatedBtnAuth(
-                    text: 'Sign in',
+                    text: '11'.tr,
                     onPressed: () {
-                      Get.to(Test());
+                      Get.offAllNamed(AppRoutes.home);
+                      // Get.to(Test());
                     },
                   ),
                   SizedBox(height: Get.height / 30),
@@ -133,9 +147,10 @@ class Login extends StatelessWidget {
                   ///
                   ///--9
                   ///
+
                   CustomWiGoToAnotherPageLoginOrSignupAuth(
-                    textOne: "Don't have an account ? ",
-                    texttwo: "Register",
+                    textOne: "13".tr,
+                    texttwo: "14".tr,
                     onTap: () => Get.offNamed(AppRoutes.signup),
                   ),
                 ],
